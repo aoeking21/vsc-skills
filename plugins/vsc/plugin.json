@@ -1,0 +1,42 @@
+{
+  "name": "vsc",
+  "version": "0.1.0",
+  "description": "VibeShotClub visual creation workflows for AI image and video prompting, candid portrait direction, style exploration, travel vlog creation, and creative asset management.",
+  "author": {
+    "name": "VibeShotClub",
+    "email": "support@vescend.com",
+    "url": "https://vibeshot.club"
+  },
+  "homepage": "https://vibeshot.club",
+  "repository": "https://github.com/aoeking21/vsc-skills",
+  "keywords": [
+    "aigc",
+    "image",
+    "video",
+    "photography",
+    "prompt",
+    "vibeshotclub",
+    "vsc"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "VSC 创作入口",
+    "shortDescription": "VibeShotClub 图像与视频创作工作流。",
+    "longDescription": "统一调用 VibeShotClub 的人像摄影、稀有风格探索、东方幻想、夏季 POV、旅行 Vlog 与图片资产工作流，并在宿主支持时完成实际图片交付。",
+    "developerName": "VibeShotClub",
+    "category": "Productivity",
+    "capabilities": [
+      "Skills"
+    ],
+    "websiteURL": "https://vibeshot.club",
+    "privacyPolicyURL": "https://vibeshot.club/privacy",
+    "termsOfServiceURL": "https://vibeshot.club/terms",
+    "defaultPrompt": [
+      "@vsc创作入口，生成一张风雨交加街头的真实人像照片。",
+      "$vsc 给这个人物做一张自然生活感抓拍照片。",
+      "@vsc创作入口，给这个主体探索 8 种稀有视觉风格，只要提示词。"
+    ],
+    "brandColor": "#111111",
+    "screenshots": []
+  }
+}
