@@ -1,0 +1,33 @@
+name: VSC Plugin Validation
+
+on:
+  push:
+    branches:
+      - chatgpt-plugin-marketplace
+  pull_request:
+    paths:
+      - '.agents/plugins/**'
+      - 'plugins/vsc/**'
+      - 'tests/test_chatgpt_plugin_package.py'
+      - '.github/workflows/plugin-validation.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate JSON manifests
+        run: |
+          python -m json.tool .agents/plugins/marketplace.json >/dev/null
+          python -m json.tool plugins/vsc/plugin.json >/dev/null
+          python -m json.tool plugins/vsc/.codex-plugin/plugin.json >/dev/null
+      - name: Validate packaged skills
+        run: python -m unittest tests.test_chatgpt_plugin_package -v
+      - name: Run repository tests
+        run: python -m unittest discover -s tests -v
